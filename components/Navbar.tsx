@@ -43,9 +43,6 @@ const Navbar: React.FC = () => {
               {item}
             </button>
           ))}
-          <Link to="/admin" className="text-neutral-500 hover:text-accent transition-colors">
-            <LayoutDashboard className="w-5 h-5" />
-          </Link>
         </div>
 
         {/* Mobile Toggle */}

@@ -134,7 +134,7 @@ const App: React.FC = () => {
               </section>
             </main>
           } />
-          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/aywah09" element={<AdminPanel />} />
         </Routes>
         <Footer />
       </div>
