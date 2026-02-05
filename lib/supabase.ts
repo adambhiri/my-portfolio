@@ -1,12 +1,12 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-// Get keys from process.env or localStorage (fallback for bolt environment)
+// Get keys from import.meta.env (Vite's way)
 const getKeys = () => {
-  const url = process.env.SUPABASE_URL || localStorage.getItem('supabase_url') || '';
-  const key = process.env.SUPABASE_ANON_KEY || localStorage.getItem('supabase_anon_key') || '';
+  const url = import.meta.env.VITE_SUPABASE_URL || '';
+  const key = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
   return { url, key };
-};
+}
 
 const { url, key } = getKeys();
 
