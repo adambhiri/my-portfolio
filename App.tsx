@@ -41,7 +41,6 @@ const App: React.FC = () => {
     { value: '5+', label: 'Years Experience' }
   ];
 
-  // Added explicit Variants type to fix motion type errors
   const revealVars: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -99,7 +98,8 @@ const App: React.FC = () => {
                     <p className="text-neutral-400 text-lg leading-relaxed mb-12 font-medium">
                       {profile?.bio || "I started my journey in BI, but I fell in love with the power of automation. Since then, I've focused on building systems that don't just move data, but save hundreds of human hours every month."}
                     </p>
-                    <div className="grid grid-cols-3 gap-4">
+                    {/* Fixed: grid-cols-1 for mobile, sm:grid-cols-3 for larger screens */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {stats.map((stat, i) => (
                         <motion.div 
                           whileHover={{ y: -5, borderColor: '#ff5733' }}
@@ -134,7 +134,7 @@ const App: React.FC = () => {
               </section>
             </main>
           } />
-          <Route path="/aywah09" element={<AdminPanel />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
         <Footer />
       </div>
