@@ -1,0 +1,17 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Hedha ya3ni el robot bech yekhdem kol lila m3a nos el lil
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Bech tnajem tkhadmou wahedek tjarbou
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase API
+        run: |
+          curl -X GET "https://fwmjmctipcenltxhqitn.supabase.co/rest/v1/" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
