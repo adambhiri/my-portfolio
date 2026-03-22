@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
               <img 
                 src={profile?.photo_url } 
                 alt="Adam Bhiri" 
-                className="w-full h-full object-cover rounded-full bg-[#1c232d] grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover rounded-full bg-[#1c232d] transition-all duration-700"
               />
             </div>
           </div>
