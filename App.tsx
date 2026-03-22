@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import { BarChart3, Workflow, Database } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
+
+
 const App: React.FC = () => {
   const [profile, setProfile] = useState<any>(null);
   const { scrollYProgress } = useScroll();

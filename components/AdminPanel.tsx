@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { Project } from '../types';
 
+const pass = import.meta.env.Vite_PASSWORD;
 const AdminPanel: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'profile' | 'projects' | 'leads' | 'settings'>('profile');
   const [isLogged, setIsLogged] = useState(false);
@@ -138,7 +139,7 @@ const AdminPanel: React.FC = () => {
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-md bg-neutral-950 border border-neutral-900 p-12 rounded-3xl">
           <ShieldCheck className="w-12 h-12 text-accent mb-8 mx-auto" />
           <h2 className="text-2xl font-black uppercase text-center mb-8 tracking-widest italic">Admin Console</h2>
-          <form onSubmit={(e) => { e.preventDefault(); if(password==='adam2025') setIsLogged(true); else alert('Wrong password!'); }} className="space-y-6">
+          <form onSubmit={(e) => { e.preventDefault(); if(password===pass) setIsLogged(true); else alert('Wrong password!'); }} className="space-y-6">
             <input 
               type="password" 
               value={password}
