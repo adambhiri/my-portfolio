@@ -12,16 +12,34 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="flex gap-8 mb-16">
-          {[
-            { icon: <Github />, label: 'Github' },
-            { icon: <Linkedin />, label: 'LinkedIn' },
-            { icon: <Mail />, label: 'Mail' }
-          ].map(social => (
-            <a key={social.label} href="#" className="p-4 rounded-full border border-neutral-900 hover:border-[#ff4f00] hover:text-[#ff4f00] transition-all">
-              {social.icon}
-            </a>
-          ))}
-        </div>
+  {[
+    { 
+      icon: <Github />, 
+      label: 'Github', 
+      url: 'https://github.com/adambhiri' // Hott el link mta3 el GitHub mte3ek hna
+    },
+    { 
+      icon: <Linkedin />, 
+      label: 'LinkedIn', 
+      url: 'https://www.linkedin.com/in/adam-bhiri-508a33332/' 
+    },
+    { 
+      icon: <Mail />, 
+      label: 'Mail', 
+      url: 'mailto:adam.bhiri1709@gmail.com' // mail app direct
+    }
+  ].map(social => (
+    <a 
+      key={social.label} 
+      href={social.url} 
+      target="_blank"  
+      rel="noopener noreferrer"
+      className="p-4 rounded-full border border-neutral-900 hover:border-[#ff4f00] hover:text-[#ff4f00] transition-all"
+    >
+      {social.icon}
+    </a>
+  ))}
+</div>
 
         <div className="text-neutral-600 text-[10px] font-black uppercase tracking-[0.5em] text-center">
           &copy; {new Date().getFullYear()} Operations Hub. All Rights Reserved.
